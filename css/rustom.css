@@ -5,7 +5,6 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    z-index: 0;
 }
 :root{
     --main-color: #2196f3;
@@ -666,7 +665,7 @@ ul{
 .team{
     padding-top:var(--main-padding);
     padding-bottom:var(--main-padding);
-    background-color:white;
+    position:relative;
 }
 .team .container{
     display:grid;
@@ -700,7 +699,7 @@ ul{
     z-index: -1;
     transition:var(--main-transition);
 }
-.team .box:hover:after{
+.team .box:hover::after{
     width:calc(100% - 60px);
 }
 .team .box .media{
@@ -733,7 +732,7 @@ ul{
 .team .box .media .social a:hover i{
     color:var(--main-color);
 }
-.team .box .media .social a i{
+.team .box .media .social i{
     color: #777;
     transition:var(--main-transition);
 }
@@ -746,14 +745,13 @@ ul{
     font-size:22px;
     transition:var(--main-transition);
 }
-.team .box:hover .text h3{
-    color:#777;
-}
 .team .box .text p{
     margin-top:10px;
     margin-bottom:25px;
 }
-
+.team .box:hover .text h3{
+    color:#777;
+}
 /* ---   end team members --- */
 
 /* --- start services --- */
@@ -939,6 +937,7 @@ ul{
     width: 0px;
     background-color:#ededed;
     transition:var(--main-transition);
+    z-index: -1;
 }
 .works .boxs .box:hover:before{
     height:100%;
@@ -1260,6 +1259,7 @@ ul{
     padding-bottom:var(--main-padding);
     background-image: url("../imgs/stats.jpg");
     background-size: cover;
+    z-index:1;
     position: relative;
 }
 .stats:before{
@@ -1271,9 +1271,6 @@ ul{
     height: 100%;
     background-color: rgb(255 255 255 / 95%);
     z-index: -1;
-}
-.stats .container{
-
 }
 .stats h2{
     text-align: center;
@@ -1355,6 +1352,7 @@ ul{
     align-items: center;
     padding: 0 30px;
     animation: image 10s linear infinite;
+    z-index:1;
 }
 .discount .dis-info:before{
     content: "";

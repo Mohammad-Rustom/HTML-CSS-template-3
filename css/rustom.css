@@ -297,7 +297,7 @@ ul{
 }
 @media (max-width: 767px){
     .landing .container{
-        min-height: calc(100vh - 90px);
+        min-height: calc(100vh - 110px);
     }
 }
 .landing .text{

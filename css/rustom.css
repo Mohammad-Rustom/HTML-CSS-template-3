@@ -87,15 +87,18 @@ ul{
 .main-title:after{
     right:-30px;
 }
-.main-title:hover:before{
+.main-title:hover:before,
+.main-title.play::before{
     z-index: -1;
     animation:left-move 0.5s linear forwards;
 }
-.main-title:hover:after{
+.main-title:hover:after,
+.main-title.play::after{
     z-index: -1;
     animation:right-move 0.5s linear forwards;
 }
-.main-title:hover{
+.main-title:hover,
+.main-title.play{
     color:white;
     border:2px solid white;
     transition-delay:0.5s;
@@ -116,6 +119,48 @@ ul{
     z-index: 1;
     background-image: linear-gradient(135deg, white 25%, transparent 25%), linear-gradient(225deg, white 25%, transparent 25%);
     background-size: 30px 30px;
+}
+
+.scroll-bar{
+    width: 100%;
+    height: 5px;
+    background-color: #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    span{
+        position: absolute;
+            top: 0;
+            left: 0;
+            height: inherit;
+            width: 0;
+            background-color: var(--main-color);
+            opacity: 0.6;
+    }
+}
+
+.scroll-to-top{
+    background-color: var(--main-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    position: fixed;
+    bottom: 30px;
+    right: -40px;
+    border-radius: 6px;
+    font-weight: 600;
+    padding: 10px 5px;
+    animation: bouncing 1.5s infinite;
+    cursor: pointer;
+    z-index: 50;
+    opacity: 0.75;
+    transition: var(--main-transition);
+}
+.scroll-to-top.show{
+    right: 10px;
 }
 /* ---   end componenets --- */
 
@@ -665,7 +710,6 @@ ul{
 .team{
     padding-top:var(--main-padding);
     padding-bottom:var(--main-padding);
-    position:relative;
 }
 .team .container{
     display:grid;
@@ -883,7 +927,9 @@ ul{
     top: 0;
     left: 0;
     height: 100%;
+    width:0;
     background-color: var(--main-color);
+    transition: 0.5s;
 }
 
 /* ---   end skills --- */
@@ -993,13 +1039,14 @@ ul{
     border: 1px solid #d4d4d4;
     border-radius: 6px;
     text-align: center;
-    width: 75px;
+    width: 90px;
     transition: var(--main-transition);
 }
 .events .info .time .unit span{
     display: block;
     transition: var(--main-transition);
 }
+
 .events .info .time .unit span:first-child{
     font-size: 35px;
     padding: 15px;

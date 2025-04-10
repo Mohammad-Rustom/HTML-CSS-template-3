@@ -55,7 +55,7 @@ window.addEventListener("scroll" , () => {
     started = true;
         }
 
-    window.scrollY >= 695 ? scrollToTop.classList.add("show") : scrollToTop.classList.remove("show") ;
+    window.scrollY >= 700 ? scrollToTop.classList.add("show") : scrollToTop.classList.remove("show") ;
 })
 
 function startCount(el) {

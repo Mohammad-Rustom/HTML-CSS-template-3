@@ -1085,7 +1085,26 @@ ul{
         max-width:100%;
         flex-direction: column;
     }
+    .events .info .time .unit span:first-child {
+    font-size: 14px;
+    padding: 8px;
+    font-weight: 900;
+    }
+        .events .info .time {
+            gap: 10px;
+    }  
+    .events .info .time .unit {
+    width: 50px;
+    transition: var(--main-transition);
+    }
+        .events .info .time .unit span:last-child {
+            font-size: 12px;
+            padding: 10px 0;
+            font-weight: 600;
+        }
 }
+
+
 .events .subscribe form  input[type="email"]{
     flex: 1;
     padding: 20px;
